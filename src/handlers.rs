@@ -1,4 +1,4 @@
-use actix_web::{get, post, web, HttpResponse, Responder};
+use actix_web::{delete, get, post, web, HttpResponse, Responder};
 use sqlx::PgPool;
 use uuid::Uuid;
 use serde::{Serialize};
@@ -246,7 +246,7 @@ pub async fn star_level(
     }
 }
 
-#[post("/levels/{id}/unstar")]
+#[delete("/levels/{id}/star")]
 pub async fn unstar_level(
     pool: web::Data<PgPool>,
     id: web::Path<String>,

@@ -9,6 +9,7 @@ This is the server that hosts the levels for the devils dungeon. Feel free to us
 3. Run the main.rs
 
 ## Docker
+`cargo sqlx prepare`
 `docker compose up --build` to build it
 Then run to migrate the db
 `docker compose run --rm server ./setup`
@@ -19,9 +20,11 @@ Then run it like normal
 ### Adding a new migration
 run `sqlx migrate add <name here>` to generate a new migration.
 
-
 ## Todo
  - Likes/Dislikes
  - Rating levels? (based on how hard they are)
  - Delete levels
  - Update levels
+ - Limit usernames to ascii
+ - Make min and max length for usernames
+ - min length for passwords
